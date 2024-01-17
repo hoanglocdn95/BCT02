@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ItemDespawn : MonoBehaviour
+{
+    [SerializeField] public Animator itemAnimator;
+    [SerializeField] protected float bananaRegen = 5f;
+
+    public void ItemDespawn()
+    {
+        Destroy(transform.gameObject);
+    }
+}

@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine;
+
+public class HealthBar : MonoBehaviour
+{
+    [SerializeField] Image HP;
+    [SerializeField] public float currentHP = 50f;
+    private float minHP = 0f;
+    private float maxHP = 100f;
+
+    public virtual void IncreaseHP (float amount)
+    {
+        this.currentHP += amount;
+    }
+
+    public virtual void DecreaseHP (float amount)
+    {
+        this.currentHP -= amount;
+    }
+}

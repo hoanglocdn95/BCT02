@@ -1,0 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    private static PlayerController instance;
+    [SerializeField] public static PlayerController Instance { get => instance; }
+
+
+}

@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlatformMovement : MonoBehaviour
+{
+    [SerializeField] public GameObject[] points;
+
+    [SerializeField] private float speed = 2f;
+    [SerializeField] private int currentPointIndex = 0;
+
+    private void Update()
+    {
+        if (Vector2.Distance(transform.position, points[currentPointIndex].transform.position) < 0.1f)
+        {
+            this.currentPointIndex++;
+
+            if (this.currentPointIndex >= points.Length)
+            {
+                this.currentPointIndex--;
+            }
+        }
+    }
+
+    protected virtual void Moving()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, points[this.currentPointIndex].transform.position, Time.deltaTime * speed);
+    }
+}
